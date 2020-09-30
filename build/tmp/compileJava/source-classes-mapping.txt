@@ -1,0 +1,48 @@
+dev/johnwatts/openweather/Weather.java
+ dev.johnwatts.openweather.Weather
+dev/johnwatts/openweather/Snow.java
+ dev.johnwatts.openweather.Snow
+dev/johnwatts/openweather/HourlyWeatherForecast.java
+ dev.johnwatts.openweather.HourlyWeatherForecast
+dev/johnwatts/openweather/ReturnsDateTime.java
+ dev.johnwatts.openweather.ReturnsDateTime
+dev/johnwatts/openweather/Temperature.java
+ dev.johnwatts.openweather.Temperature
+dev/johnwatts/openweather/Hourly.java
+ dev.johnwatts.openweather.Hourly
+dev/johnwatts/openweather/OneCallResponse.java
+ dev.johnwatts.openweather.OneCallResponse
+dev/johnwatts/openweather/HourlyForecastLookup.java
+ dev.johnwatts.openweather.HourlyForecastLookup
+dev/johnwatts/openweather/Sunrise.java
+ dev.johnwatts.openweather.Sunrise
+dev/johnwatts/openweather/UtcSecondsToZonedDateTimeDeserializer.java
+ dev.johnwatts.openweather.UtcSecondsToZonedDateTimeDeserializer
+dev/johnwatts/openweather/WeatherModel.java
+ dev.johnwatts.openweather.WeatherModel
+dev/johnwatts/openweather/HourlyPeriod.java
+ dev.johnwatts.openweather.HourlyPeriod
+dev/johnwatts/openweather/Rain.java
+ dev.johnwatts.openweather.Rain
+dev/johnwatts/openweather/Sunset.java
+ dev.johnwatts.openweather.Sunset
+dev/johnwatts/openweather/DateTime.java
+ dev.johnwatts.openweather.DateTime
+dev/johnwatts/openweather/MinutelyWeather.java
+ dev.johnwatts.openweather.MinutelyWeather
+dev/johnwatts/openweather/FeelsLike.java
+ dev.johnwatts.openweather.FeelsLike
+dev/johnwatts/openweather/EpochSecondsToLocalDateConvertor.java
+ dev.johnwatts.openweather.EpochSecondsToLocalDateConvertor
+dev/johnwatts/openweather/CurrentWeather.java
+ dev.johnwatts.openweather.CurrentWeather
+dev/johnwatts/openweather/OneCallResponseConverter.java
+ dev.johnwatts.openweather.OneCallResponseConverter
+dev/johnwatts/openweather/ForecastDuration.java
+ dev.johnwatts.openweather.ForecastDuration
+dev/johnwatts/openweather/WeatherClient.java
+ dev.johnwatts.openweather.WeatherClient
+dev/johnwatts/openweather/WeatherForecast.java
+ dev.johnwatts.openweather.WeatherForecast
+dev/johnwatts/openweather/DailyWeatherForecast.java
+ dev.johnwatts.openweather.DailyWeatherForecast
