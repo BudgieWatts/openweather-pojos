@@ -9,10 +9,11 @@ import javax.ws.rs.client.WebTarget;
 public class WeatherClient {
 
     private final Client client;
-    private static final String apiKey = "GET_YOUR_OWN";
+    private String apiKey; // visit https://openweathermap.org/guide to get a key
     private static final String urlTemplate = "https://api.openweathermap.org/data/2.5/onecall?lat=%f&lon=%f&appid=%s&units=metric";
 
-    public WeatherClient() {
+    public WeatherClient(String apiKey) {
+        this.apiKey = apiKey;
         this.client = ClientBuilder.newClient();
     }
 
