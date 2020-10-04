@@ -2,7 +2,6 @@ package dev.johnwatts.openweather;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import dev.johnwatts.openweather.UtcSecondsToZonedDateTimeDeserializer;
 
 import java.time.Duration;
 import java.time.ZonedDateTime;
@@ -15,22 +14,34 @@ public class DailyWeatherForecast implements WeatherForecast, ForecastDuration {
 
     @JsonDeserialize(using = UtcSecondsToZonedDateTimeDeserializer.class)
     private ZonedDateTime sunrise;
+
     @JsonDeserialize(using = UtcSecondsToZonedDateTimeDeserializer.class)
     private ZonedDateTime sunset;
+
     private Temperature temp;
-    private FeelsLike feels_like;
+
+    @JsonProperty("feels_like")
+    private FeelsLike feelsLike;
+
     private long pressure;
     private int humidity;
-    private double dew_point;
+
+    @JsonProperty("dew_point")
+    private double dewPoint;
+
     private double uvi;
     private int clouds;
     private int visibility;
+
     @JsonProperty("wind_speed")
     private double windSpeed;
+
     @JsonProperty("wind_gust")
     private double windGust;
+
     @JsonProperty("wind_deg")
     private int windDirection;
+
     private double pop;
     private double rain;
     private double snow;
@@ -73,12 +84,12 @@ public class DailyWeatherForecast implements WeatherForecast, ForecastDuration {
         this.temp = temp;
     }
 
-    public FeelsLike getFeels_like() {
-        return feels_like;
+    public FeelsLike getFeelsLike() {
+        return feelsLike;
     }
 
-    public void setFeels_like(FeelsLike feels_like) {
-        this.feels_like = feels_like;
+    public void setFeelsLike(FeelsLike feelsLike) {
+        this.feelsLike = feelsLike;
     }
 
     public long getPressure() {
@@ -97,12 +108,12 @@ public class DailyWeatherForecast implements WeatherForecast, ForecastDuration {
         this.humidity = humidity;
     }
 
-    public double getDew_point() {
-        return dew_point;
+    public double getDewPoint() {
+        return dewPoint;
     }
 
-    public void setDew_point(double dew_point) {
-        this.dew_point = dew_point;
+    public void setDewPoint(double dewPoint) {
+        this.dewPoint = dewPoint;
     }
 
     public double getUvi() {
@@ -192,10 +203,10 @@ public class DailyWeatherForecast implements WeatherForecast, ForecastDuration {
                 ",\nsunrise=" + sunrise +
                 ",\nsunset=" + sunset +
                 ",\ntemp=" + temp +
-                ",\nfeels_like=" + feels_like +
+                ",\nfeels_like=" + feelsLike +
                 ",\npressure=" + pressure +
                 ",\nhumidity=" + humidity +
-                ",\ndew_point=" + dew_point +
+                ",\ndew_point=" + dewPoint +
                 ",\nuvi=" + uvi +
                 ",\nclouds=" + clouds +
                 ",\nvisibility=" + visibility +

@@ -2,7 +2,6 @@ package dev.johnwatts.openweather;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import dev.johnwatts.openweather.UtcSecondsToZonedDateTimeDeserializer;
 
 import java.time.Duration;
 import java.time.ZonedDateTime;
@@ -15,10 +14,12 @@ public class CurrentWeather implements WeatherForecast {
     private long sunrise;
     private long sunset;
     private double temp;
-    private double feels_like;
+    @JsonProperty("feels_like")
+    private double feelsLike;
     private int pressure;
     private int humidity;
-    private double dew_point;
+    @JsonProperty("dew_point")
+    private double dewPoint;
     private double uvi;
     private int clouds;
     private long visibility;
@@ -64,12 +65,12 @@ public class CurrentWeather implements WeatherForecast {
         this.temp = temp;
     }
 
-    public double getFeels_like() {
-        return feels_like;
+    public double getFeelsLike() {
+        return feelsLike;
     }
 
-    public void setFeels_like(double feels_like) {
-        this.feels_like = feels_like;
+    public void setFeelsLike(double feelsLike) {
+        this.feelsLike = feelsLike;
     }
 
     public int getPressure() {
@@ -88,12 +89,12 @@ public class CurrentWeather implements WeatherForecast {
         this.humidity = humidity;
     }
 
-    public double getDew_point() {
-        return dew_point;
+    public double getDewPoint() {
+        return dewPoint;
     }
 
-    public void setDew_point(double dew_point) {
-        this.dew_point = dew_point;
+    public void setDewPoint(double dewPoint) {
+        this.dewPoint = dewPoint;
     }
 
     public double getUvi() {
@@ -175,10 +176,10 @@ public class CurrentWeather implements WeatherForecast {
                 ",\nsunrise=" + sunrise +
                 ",\nsunset=" + sunset +
                 ",\ntemp=" + temp +
-                ",\nfeels_like=" + feels_like +
+                ",\nfeels_like=" + feelsLike +
                 ",\npressure=" + pressure +
                 ",\nhumidity=" + humidity +
-                ",\ndew_point=" + dew_point +
+                ",\ndew_point=" + dewPoint +
                 ",\nuvi=" + uvi +
                 ",\nclouds=" + clouds +
                 ",\nvisibility=" + visibility +

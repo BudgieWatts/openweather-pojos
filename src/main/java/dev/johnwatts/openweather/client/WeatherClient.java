@@ -1,4 +1,6 @@
-package dev.johnwatts.openweather;
+package dev.johnwatts.openweather.client;
+
+import dev.johnwatts.openweather.OneCallResponse;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;

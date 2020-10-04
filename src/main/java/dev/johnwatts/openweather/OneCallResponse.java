@@ -1,5 +1,6 @@
 package dev.johnwatts.openweather;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.List;
@@ -9,7 +10,7 @@ public class OneCallResponse {
     private double lat;
     private double lon;
     private String timezone;
-    private int timezone_offset;
+    private int timezoneOffset;
     private CurrentWeather current;
     private List<DailyWeatherForecast> daily;
 
@@ -17,6 +18,8 @@ public class OneCallResponse {
     HourlyForecastLookup hourlyForecastLookup;
 
     private List<MinutelyWeather> minutely;
+
+    private List<Alert> alerts;
 
     public double getLat() {
         return lat;
@@ -42,12 +45,13 @@ public class OneCallResponse {
         this.timezone = timezone;
     }
 
-    public int getTimezone_offset() {
-        return timezone_offset;
+    @JsonProperty("getTimezone_offset")
+    public int getTimezoneOffset() {
+        return timezoneOffset;
     }
 
-    public void setTimezone_offset(int timezone_offset) {
-        this.timezone_offset = timezone_offset;
+    public void setTimezoneOffset(int timezoneOffset) {
+        this.timezoneOffset = timezoneOffset;
     }
 
     public CurrentWeather getCurrent() {
@@ -82,6 +86,14 @@ public class OneCallResponse {
         this.minutely = minutely;
     }
 
+    public List<Alert> getAlerts() {
+        return alerts;
+    }
+
+    public void setAlerts(List<Alert> alerts) {
+        this.alerts = alerts;
+    }
+
     protected void setHourlyForecastLookup(HourlyForecastLookup hourlyForecastLookup) {
         this.hourlyForecastLookup = hourlyForecastLookup;
     }
@@ -97,10 +109,11 @@ public class OneCallResponse {
                 "lat=" + lat +
                 ", lon=" + lon +
                 ", timezone='" + timezone + '\'' +
-                ", timezone_offset=" + timezone_offset +
+                ", timezone_offset=" + timezoneOffset +
                 ", current=" + current +
                 ", daily=" + daily +
                 ", hourly=" + hourly +
+                ", alerts=" + alerts +
                 '}';
     }
 }

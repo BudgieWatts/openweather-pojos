@@ -2,7 +2,6 @@ package dev.johnwatts.openweather;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import dev.johnwatts.openweather.UtcSecondsToZonedDateTimeDeserializer;
 
 import java.time.Duration;
 import java.time.ZonedDateTime;
@@ -13,10 +12,12 @@ public class HourlyWeatherForecast implements WeatherForecast, ForecastDuration 
     @JsonDeserialize(using = UtcSecondsToZonedDateTimeDeserializer.class)
     private ZonedDateTime dateTime;
     private double temp;
-    private double feels_like;
+    @JsonProperty("feels_like")
+    private double feelsLike;
     private long pressure;
     private int humidity;
-    private double dew_point;
+    @JsonProperty("dew_point")
+    private double dewPoint;
     private int clouds;
     private int visibility;
     @JsonProperty("wind_speed")
@@ -51,12 +52,12 @@ public class HourlyWeatherForecast implements WeatherForecast, ForecastDuration 
         this.temp = temp;
     }
 
-    public double getFeels_like() {
-        return feels_like;
+    public double getFeelsLike() {
+        return feelsLike;
     }
 
-    public void setFeels_like(double feels_like) {
-        this.feels_like = feels_like;
+    public void setFeelsLike(double feelsLike) {
+        this.feelsLike = feelsLike;
     }
 
     public long getPressure() {
@@ -75,12 +76,12 @@ public class HourlyWeatherForecast implements WeatherForecast, ForecastDuration 
         this.humidity = humidity;
     }
 
-    public double getDew_point() {
-        return dew_point;
+    public double getDewPoint() {
+        return dewPoint;
     }
 
-    public void setDew_point(double dew_point) {
-        this.dew_point = dew_point;
+    public void setDewPoint(double dewPoint) {
+        this.dewPoint = dewPoint;
     }
 
     public int getClouds() {
@@ -160,10 +161,10 @@ public class HourlyWeatherForecast implements WeatherForecast, ForecastDuration 
         return "HourlyWeatherForecast{" +
                 "dt=" + getDateTime() +
                 ",\ntemp=" + temp +
-                ",\nfeels_like=" + feels_like +
+                ",\nfeels_like=" + feelsLike +
                 ",\npressure=" + pressure +
                 ",\nhumidity=" + humidity +
-                ",\ndew_point=" + dew_point +
+                ",\ndew_point=" + dewPoint +
                 ",\nclouds=" + clouds +
                 ",\nvisibility=" + visibility +
                 ",\nwind_speed=" + windSpeed +
